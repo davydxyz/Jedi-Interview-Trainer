@@ -1,0 +1,140 @@
+/* Typography and Text Styles */
+
+/* Welcome Page Typography */
+.starwars-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.welcome-text {
+    margin-bottom: 40px;
+}
+
+.apprentice-greeting {
+    font-size: 2rem;
+    color: #00d4ff;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.mission-text {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.mission-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    font-style: italic;
+}
+
+/* Section Typography */
+.section-title {
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Card Typography */
+.mentor-card h3 {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.mentor-description {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.type-card h3 {
+    color: #ffd700;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.type-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Chat Typography */
+.mentor-details h3 {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.message-content p {
+    margin: 0;
+    line-height: 1.5;
+    color: #fff;
+}
+
+/* Status Text */
+.audio-status {
+    color: #00d4ff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 4px 0;
+}
+
+.audio-status.success {
+    color: #00ff7f;
+}
+
+.audio-status.error {
+    color: #ff6b6b;
+}
+
+.audio-status.processing {
+    color: #ffd700;
+    animation: pulse 1.5s infinite;
+}
+
+.audio-status.recording {
+    color: #ff6b6b;
+    animation: pulse 1s infinite;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .starwars-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .starwars-title {
+        font-size: 2rem;
+    }
+    
+    .apprentice-greeting {
+        font-size: 1.5rem;
+    }
+    
+    .mission-text {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+} 

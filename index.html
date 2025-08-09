@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jedi Interview Training</title>
+    <!-- Modular CSS Imports -->
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/mentor-cards.css">
+    <link rel="stylesheet" href="css/components/chat-interface.css">
+    
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="css/themes/starwars-theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="starwars-theme">
+    
+    <!-- Page 1: Welcome Screen -->
+    <div id="welcomePage" class="page active">
+        <div class="starwars-container">
+            <div class="welcome-content">
+                <h1 class="starwars-title">JEDI INTERVIEW TRAINING</h1>
+                <div class="welcome-text">
+                    <p class="apprentice-greeting">Welcome, Apprentice.</p>
+                    <p class="mission-text">Ready to become a Jedi?</p>
+                    <p class="mission-subtitle">Let's enhance your interview skills!</p>
+                </div>
+                <button id="beginJourneyBtn" class="jedi-btn primary">Begin Your Journey</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Mentor Selection -->
+    <div id="mentorPage" class="page">
+        <div class="starwars-container">
+            <div class="mentor-selection">
+                <h2 class="section-title">Choose Your Mentor</h2>
+                <p class="section-subtitle">Select your guide on the path to interview mastery</p>
+                
+                <div class="mentors-grid">
+                    <div class="mentor-card" data-mentor="yoda">
+                        <div class="mentor-avatar">
+                            <img src="headshots/Yoda.png" alt="Master Yoda">
+                        </div>
+                        <h3>Master Yoda</h3>
+                        <p class="mentor-description">Wise and patient teacher. Learn through ancient wisdom and reflection you will.</p>
+                        <div class="mentor-specialty">Specialty: Behavioral & Wisdom</div>
+                    </div>
+                    
+                    <div class="mentor-card" data-mentor="obiwan">
+                        <div class="mentor-avatar">
+                            <img src="headshots/Obiwan.png" alt="Obi-Wan Kenobi">
+                        </div>
+                        <h3>Obi-Wan Kenobi</h3>
+                        <p class="mentor-description">Strategic and analytical master. Perfect balance of technique and insight.</p>
+                        <div class="mentor-specialty">Specialty: Technical & Strategy</div>
+                    </div>
+                    
+                    <div class="mentor-card" data-mentor="vader">
+                        <div class="mentor-avatar">
+                            <img src="headshots/Darth_Vadar.png" alt="Darth Vader">
+                        </div>
+                        <h3>Darth Vader</h3>
+                        <p class="mentor-description">Direct and powerful feedback. No weakness shall remain hidden from your sight.</p>
+                        <div class="mentor-specialty">Specialty: Leadership & Power</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Interview Type Selection -->
+    <div id="interviewTypePage" class="page">
+        <div class="starwars-container">
+            <div class="interview-type-selection">
+                <h2 class="section-title">Choose Your Challenge</h2>
+                <p class="section-subtitle">What type of interview wisdom do you seek?</p>
+                
+                <div class="interview-types-grid">
+                    <div class="type-card" data-type="behavioral">
+                        <div class="type-icon">🧠</div>
+                        <h3>Behavioral</h3>
+                        <p>Master the art of storytelling and emotional intelligence</p>
+                    </div>
+                    
+                    <div class="type-card" data-type="technical">
+                        <div class="type-icon">⚙️</div>
+                        <h3>Technical</h3>
+                        <p>Sharpen your technical prowess and problem-solving skills</p>
+                    </div>
+                    
+                    <div class="type-card" data-type="consulting">
+                        <div class="type-icon">📊</div>
+                        <h3>Consulting</h3>
+                        <p>Develop strategic thinking and business acumen</p>
+                    </div>
+                    
+                    <div class="type-card" data-type="leadership">
+                        <div class="type-icon">👑</div>
+                        <h3>Leadership</h3>
+                        <p>Learn the ways of influence and team mastery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4: Chat Interface -->
+    <div id="chatPage" class="page">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="mentor-info">
+                    <img id="selectedMentorAvatar" src="" alt="Mentor" class="chat-mentor-avatar">
+                    <div class="mentor-details">
+                        <h3 id="selectedMentorName"></h3>
+                        <span id="selectedInterviewType" class="interview-badge"></span>
+                    </div>
+                </div>
+                <button id="backToMenuBtn" class="back-btn">⚡ New Session</button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message mentor-message">
+                    <div class="message-avatar">
+                        <img id="chatMentorImg" src="" alt="Mentor">
+                    </div>
+                    <div class="message-content">
+                        <p id="initialMentorGreeting"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-section">
+                <div class="input-container">
+                    <div class="transcript-input">
+                        <textarea 
+                            id="transcriptInput" 
+                            placeholder="Paste your interview transcript here to receive wisdom from your mentor..."
+                            rows="4"
+                        ></textarea>
+                    </div>
+                    
+                    <!-- Audio Controls -->
+                    <div class="audio-controls">
+                        <div class="audio-buttons-left">
+                            <input type="file" id="audioFile" accept="audio/*" style="display: none;">
+                            <button id="recordBtn" class="audio-btn record-btn">🎤 Record</button>
+                            <button id="uploadBtn" class="audio-btn upload-btn">📁 Upload Audio</button>
+                        </div>
+                        <div id="audioStatus" class="audio-status"></div>
+                        <button id="suggestedFollowupBtn" class="suggested-followup-btn" disabled>💡 Suggested Follow-up</button>
+                        <button id="sendBtn" class="send-btn">Send to Mentor</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Suggested Follow-up Modal -->
+    <div id="followupModal" class="followup-modal" style="display: none;">
+        <div class="followup-modal-content">
+            <div class="followup-header">
+                <h3>💡 Suggested Follow-up Questions</h3>
+                <span class="followup-close">&times;</span>
+            </div>
+            <div class="followup-body">
+                <p class="followup-description">Here are some strategic follow-up questions to deepen your interview preparation:</p>
+                <div id="followupSuggestions" class="followup-suggestions">
+                    <!-- Dynamic suggestions will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modular JavaScript Imports -->
+    <!-- Core Configuration -->
+    <script src="js/data/mentor-config.js?v=timeline-debug-1"></script>
+    
+    <!-- Core Modules -->
+    <script src="js/core/state-manager.js?v=timeline-debug-1"></script>
+    <script src="js/core/ui-manager.js?v=timeline-debug-1"></script>
+    
+    <!-- Service Modules -->
+    <script src="js/services/api-service.js?v=debug-followup-2"></script>
+    <script src="js/services/audio-manager.js?v=timeline-debug-1"></script>
+    <script src="js/services/followup-manager.js?v=ui-fix-1"></script>
+    
+    <!-- Component Modules -->
+    <script src="js/components/chat-interface.js?v=timeline-debug-1"></script>
+    <script src="js/components/mentor-formatter.js?v=timeline-debug-1"></script>
+    
+    <!-- Main Application -->
+    <script src="js/core/app.js?v=timeline-debug-1"></script>
+</body>
+</html> 

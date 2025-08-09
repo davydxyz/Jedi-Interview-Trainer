@@ -1,0 +1,105 @@
+/* Mentor and Interview Type Card Components */
+
+/* Container Layouts */
+.mentor-selection, .interview-type-selection {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.mentors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.interview-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Mentor Card Styles */
+.mentor-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mentor-card:hover {
+    border-color: #00d4ff;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
+}
+
+.mentor-card.selected {
+    border-color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.mentor-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #00d4ff;
+}
+
+.mentor-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mentor-specialty {
+    background: rgba(0, 212, 255, 0.2);
+    color: #00d4ff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Interview Type Card Styles */
+.type-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.type-card:hover {
+    border-color: #00d4ff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+}
+
+.type-card.selected {
+    border-color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.type-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* Responsive Card Styles */
+@media (max-width: 768px) {
+    .mentors-grid, .interview-types-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+} 

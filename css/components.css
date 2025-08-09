@@ -1,0 +1,292 @@
+/* Components - Buttons, forms, and reusable UI elements */
+
+/* Jedi Button Styles */
+.jedi-btn {
+    background: linear-gradient(45deg, var(--starwars-blue), #0099cc);
+    border: 2px solid var(--starwars-blue);
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.jedi-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.4);
+    background: linear-gradient(45deg, #0099cc, var(--starwars-blue));
+}
+
+.jedi-btn:active {
+    transform: translateY(0);
+}
+
+/* Chat Action Buttons */
+.chat-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.demo-btn, .send-btn {
+    background: linear-gradient(45deg, var(--starwars-blue), #0099cc);
+    border: 2px solid var(--starwars-blue);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+    max-width: 200px;
+}
+
+.demo-btn:hover, .send-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+}
+
+.send-btn {
+    background: linear-gradient(45deg, var(--starwars-gold), #ffed4e);
+    border-color: var(--starwars-gold);
+    color: #000;
+    font-weight: 700;
+}
+
+.send-btn:hover {
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.send-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Back Button */
+.back-btn {
+    background: linear-gradient(45deg, var(--starwars-red), #ee5a52);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* Form Elements */
+textarea, input[type="text"], input[type="email"] {
+    background: var(--dark-bg);
+    border: 2px solid var(--starwars-blue);
+    border-radius: 10px;
+    color: #fff;
+    padding: 15px;
+    font-family: var(--font-orbitron);
+    transition: all 0.3s ease;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="email"]:focus {
+    outline: none;
+    border-color: var(--starwars-gold);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+textarea::placeholder, input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Cards and Containers */
+.card {
+    background: var(--dark-bg);
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-lg);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--starwars-blue);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+}
+
+.card.selected {
+    border-color: var(--starwars-gold);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* Loading and Status Indicators */
+.loading-spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 3px solid var(--starwars-blue);
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.success-indicator {
+    color: var(--starwars-green);
+    font-weight: 600;
+}
+
+.error-indicator {
+    color: var(--starwars-red);
+    font-weight: 600;
+}
+
+.warning-indicator {
+    color: var(--starwars-gold);
+    font-weight: 600;
+}
+
+/* Tooltips */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: var(--dark-bg-heavy);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.85rem;
+    border: 1px solid var(--starwars-blue);
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Progress Bars */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--starwars-blue), var(--starwars-gold));
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Badge Components */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge.primary {
+    background: rgba(0, 212, 255, 0.2);
+    color: var(--starwars-blue);
+    border: 1px solid var(--starwars-blue);
+}
+
+.badge.success {
+    background: rgba(0, 255, 127, 0.2);
+    color: var(--starwars-green);
+    border: 1px solid var(--starwars-green);
+}
+
+.badge.warning {
+    background: rgba(255, 215, 0, 0.2);
+    color: var(--starwars-gold);
+    border: 1px solid var(--starwars-gold);
+}
+
+.badge.danger {
+    background: rgba(255, 107, 107, 0.2);
+    color: var(--starwars-red);
+    border: 1px solid var(--starwars-red);
+}
+
+/* Mobile Responsiveness for Components */
+@media (max-width: 768px) {
+    .chat-actions {
+        flex-direction: column;
+    }
+    
+    .demo-btn, .send-btn {
+        max-width: none;
+    }
+    
+    .jedi-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-actions {
+        gap: 10px;
+    }
+    
+    .demo-btn, .send-btn {
+        padding: 10px 20px;
+    }
+    
+    .back-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Core Component Styles */
+
+/* Star Wars Container */
+.starwars-container {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border: 2px solid #00d4ff;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+    max-width: 90vw;
+    width: auto;
+}
+
+/* Responsive Container Styles */
+@media (max-width: 768px) {
+    .starwars-container {
+        padding: 20px;
+        margin: 10px;
+    }
+}
