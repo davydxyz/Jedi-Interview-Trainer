@@ -63,7 +63,7 @@ npm install
 npm start
 
 ```bash
-cd /Users/mac/Desktop/Interview-helper/backend && npm start
+cd /Users/mac/Desktop/Jedi-Interview-Trainer/backend && npm start
 ```
 Backend running on: http://localhost:3001
 
